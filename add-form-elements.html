@@ -1,0 +1,130 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!--
+RESOURCES USED
+http://papermashup.com/dynamically-add-form-inputs-and-submit-using-jquery/
+-->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<title>Papermashup.com | jQuery And PHP Dynamic forms</title>
+<link href="../style.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+<script>
+$(document).ready(function() {
+
+	// Get number of inputs
+	var i = $('.inputs input').size() + 1;
+	// Get width of navigation bar
+	var nav_width = $('#nav-width').val();
+	
+
+	$('#add').click(function() {
+		// Calculate if total of all nav items is greater than nav width
+		// Add function to show total width of nav so people can see how many pixels left
+		var add = 0;
+        $(".field").each(function() {
+            add += Number($(this).val());
+        });
+        if(add > nav_width) 
+        {
+        	alert('This is greater than your navigation width. Try again if you are a few pixels over or remove this field');
+        	$('.nav-item:last .field').val("");
+        } 
+        else 
+        {
+        	$('<div class="nav-item"><label for="' + i + '">' + i + '</label><input type="text" class="field" name="dynamic[]" placeholder="Add element width in px" value="" /></div>').fadeIn('slow').appendTo('.inputs');
+			i++;
+        }	
+	});
+	
+
+	// Remove last item
+	$('#remove').click(function() {
+		if(i > 1) {
+			$('.nav-item:last').remove();
+			i--; 
+		}
+	});
+	
+
+	// Reset form
+	$('#reset').click(function() {
+		while(i > 2) {
+			$('.nav-item:last').remove();
+			i--;
+		}
+	});
+	
+
+	// Submit form
+	$('.submit').click(function(){
+		// Create and empty array to store field values
+		var answers = [];
+		
+	    $.each($('.field'), function() {
+	    	a = nav_width;
+	        b = $(this).val();
+	        c = b/a;
+	        d = c*100;
+	        answers.push(d); 
+	    });
+		
+	    if(answers.length == 0) { 
+	        answers = "none"; 
+	    }   
+
+	    // Calculate if total of all nav items is greater than nav width
+	    var add = 0;
+        $(".field").each(function() {
+            add += Number($(this).val());
+        });
+	    if(add > nav_width) 
+	    {
+	    	alert('This is greater than your navigation width. Try again if you are a few pixels over or remove this field');
+        	$('.nav-item:last .field').val("");
+	    } 
+	    else
+	    {
+	    	alert(answers);
+	    };
+		
+		
+		return false;						
+	});
+	
+	
+
+});
+
+</script>
+<style>
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.dynamic-functions {
+	margin: 30px 0 10px 0
+}
+input{border:1px solid #ccc;padding:8px;font-size:14px;width:300px;}
+.submit{width:110px;background-color:#FF6;padding:3px;border:1px solid #FC0;margin-top:20px;}
+</style>
+</head>
+<body>
+ 
+
+
+	<form id="form">
+		<input type="text" name="nav_width" id="nav-width" placeholder="Enter width of navigation in px" value="960"/>
+		<div class="dynamic-functions">
+			<a href="#" id="add">Add</a> | <a href="#" id="remove">Remove</a> | <a href="#" id="reset">Reset</a>
+		</div>
+		<div class="inputs">
+			<div class="nav-item"><label for="1">1</label><input type="text" name="dynamic[]" class="field" placeholder="Add element width in px" value=""/></div>
+		</div>
+		<input name="submit" type="button" class="submit" value="Submit"/>
+	</form><!--/form-->
+
+
+ 
+</body>
+</html>
