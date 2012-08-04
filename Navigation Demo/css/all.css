@@ -1,0 +1,317 @@
+/* Reset styles
+-----------------------------------------------------------------------------*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+}
+input[type=button],
+input[type=submit],
+input[type=text],
+input[type=password],
+select,
+button,
+textarea {
+  margin: 0;
+  cursor: pointer;
+  outline: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+input[type=text], select, textarea {
+  cursor: default;
+}
+html {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-y: scroll;
+}
+body {
+  font: 14px/1.5 Georgia, "Times New Roman", Serif;
+  height: 100%;
+  text-align: center;
+  color: #000;
+  background-color: #837e78;
+}
+ul {
+  list-style: none;
+}
+a {
+  outline: none;
+  color: #000;
+  text-decoration: none;
+}
+/* Main styles
+-----------------------------------------------------------------------------*/
+#wrapper {
+  width: 100%;
+  text-align: left;
+  margin: 0 auto;
+}
+#header-wrapper {
+  width: 100%;
+  background-color: #666;
+  overflow: hidden;
+}
+#header {
+  position: relative;
+  max-width: 940px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+/* Main Navigation
+-----------------------------------------------------------------------------*/
+#nav-control {
+  display: inline-block;
+  float: right;
+  color: #fff;
+  background-color: #ff0000;
+  overflow: hidden;
+}
+#nav-wrapper {
+  float: left;
+  clear: left;
+  width: 100%;
+  margin-top: 20px;
+}
+#nav {
+  display: none;
+  font-size: 1.071em;
+  width: 100%;
+  background-color: #ccc;
+}
+#nav li {
+  display: table-cell;
+  text-align: center;
+  background: url("../images/nav-sep.png") repeat-y 0 0;
+  overflow: hidden;
+}
+#nav li:first-child {
+  background: none;
+}
+#nav li#nav1 {
+  width: 20.85%;
+}
+#nav li#nav2 {
+  width: 16.06%;
+}
+#nav li#nav3 {
+  width: 14.78%;
+}
+#nav li#nav4 {
+  width: 16.7%;
+}
+#nav li#nav5 {
+  width: 8.08%;
+}
+#nav li#nav6 {
+  width: 12.33%;
+}
+#nav li#nav7 {
+  width: 11.5%;
+}
+#nav a {
+  display: inline-block;
+  color: #333;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1.25em;
+  vertical-align: top;
+  padding: 12px 7px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* Media Queries
+-----------------------------------------------------------------------------*/
+@media (min-width:600px) {
+  #nav-control {
+    display: none;
+  }
+  #nav-wrapper {
+    clear: both;
+    display: table;
+  }
+  #nav {
+    display: table-row;
+  }
+  #secondary-nav {
+    display: block;
+  }
+  #logo {
+    width: 136px;
+    height: 78px;
+  }
+  .booking-enquiry {
+    margin-top: 26px;
+  }
+}
+/* Print
+-----------------------------------------------------------------------------*/
+@media print {
+  html body #main {
+    background: none;
+  }
+  body {
+    font: 12pt Arial, Helvetica, sans-serif;
+    color: #000;
+    background: #fff;
+  }
+  a:link, a:visited {
+    color: #000;
+    background: transparent;
+    text-decoration: none;
+    border-bottom: #b4b4b4 1px solid;
+  }
+  #nav, #footer, #flash {
+    display: none;
+  }
+  #content {
+    width: 100%;
+    margin: 0;
+    float: none;
+    background: transparent;
+  }
+  #content, #secondary-content, #primary-content {
+    float: none !important;
+  }
+  #primary-content a[href]:after {
+    content: " (" attr(href) ") ";
+    font-size: 12pt;
+  }
+  #logo {
+    font-size: 20pt;
+    font-weight: bold;
+  }
+  h1 {
+    font-size: 18pt;
+  }
+  h2 {
+    font-size: 16pt;
+  }
+  h3 {
+    font-size: 14pt;
+  }
+  h4 {
+    font-size: 12pt;
+  }
+}

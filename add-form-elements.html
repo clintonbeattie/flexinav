@@ -35,6 +35,7 @@ $(document).ready(function() {
         {
         	$('<div class="nav-item"><label for="' + i + '">' + i + '</label><input type="text" class="field" name="dynamic[]" placeholder="Add element width in px" value="" /></div>').fadeIn('slow').appendTo('.inputs');
 			i++;
+			$('.nav-item:last .field').focus();
         }	
 	});
 	
