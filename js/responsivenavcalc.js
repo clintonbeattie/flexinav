@@ -34,7 +34,7 @@ $(function() {
         else 
         {
         	$('#alerts').remove();
-        	$('<div class="nav-item"><label for="' + i + '">' + i + '</label><input type="text" class="field" name="dynamic[]" placeholder="Add element width in px" value="" /></div>').fadeIn('slow').appendTo('.inputs');
+        	$('<div class="nav-item"><label for="' + i + '">' + i + '</label><input type="text" class="field" name="dynamic[]" placeholder="Add element width" value="" /><span>px</span></div>').fadeIn('slow').appendTo('.inputs');
 			i++;
 			$('.nav-item:last .field').focus();
         }	
@@ -46,7 +46,9 @@ $(function() {
 		if(i > 1) {
 			$('.nav-item:last').remove();
 			i--; 
-		}
+		};
+		$('#alerts').remove();
+	    $('#answers').remove();
 	});
 	
 
@@ -55,12 +57,14 @@ $(function() {
 		while(i > 2) {
 			$('.nav-item:last').remove();
 			i--;
-		}
+		};
+		$('#alerts').remove();
+	    $('#answers').remove();
 	});
 	
 
 	// Submit form
-	$('.submit').click(function(){
+	$('input[type=button]').click(function(){
 		// Create and empty array to store field values
 		var answers = [];
 		
@@ -68,7 +72,7 @@ $(function() {
 	    	a = nav_width;
 	        b = $(this).val();
 	        c = b/a;
-	        d = c*100;
+	        d = parseFloat(c*100).toFixed(2);
 	        answers.push(d); 
 	    });
 
@@ -86,7 +90,7 @@ $(function() {
 	    	$('#answers').remove();
 	    	// If first value in array equals 0
 	    	if(answers == 0) {
-	        	showAlert('Please enter a value to be calulated.');
+	        	showAlert('Please enter a value to be calculated.');
 	        };
 	    	// Show answers
 	    	$('body').append("<div id='answers'>"+answers+"</div>");
