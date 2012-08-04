@@ -2,8 +2,6 @@ $(function() {
 
 	// Get number of inputs in div
 	var i = $('.inputs input').size() + 1;
-	// Get width of navigation bar
-	var nav_width = $('#nav-width').val();
 
 
 	// Show alert message
@@ -26,6 +24,8 @@ $(function() {
 		// Calculate if total of all nav items is greater than nav width
 		// Add function to show total width of nav so people can see how many pixels left
 		var add = fieldsTotal();
+		var nav_width = $('#nav-width').val();
+
         if(add > nav_width) 
         {
         	showAlert('This is greater than your navigation width. Try again, you may be a few pixels over the total width.');
@@ -67,6 +67,7 @@ $(function() {
 	$('input[type=button]').click(function(){
 		// Create and empty array to store field values
 		var answers = [];
+		var nav_width = $('#nav-width').val();
 		
 	    $.each($('.field'), function() {
 	    	a = nav_width;
