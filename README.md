@@ -1,8 +1,8 @@
-# ResponsiveNavCalc
+# FlexiNavCalc
 
-ResponsiveNavCalc is a calculator for use in determining percentage widths of navigation items in responsive layouts.
+FlexiNavCalc is a calculator for use in determining percentage widths of navigation items in responsive layouts.
 
-The aim of creating ResponsiveNavCalc is to avoid certain responsive navigation issues and to give the developer more control over navigation layout, especially full width navigation elements.
+The aim of creating FlexiNavCalc is to avoid certain responsive navigation issues and to give the developer more control over navigation layout, especially full width navigation elements.
 
 Some of the problems this hopes to resolve in navigation are:
 
@@ -11,6 +11,6 @@ Some of the problems this hopes to resolve in navigation are:
 * **3**: Navigation sometimes goes onto two lines creating when reducing the window size as can be seen [here](http://www.asburyagile.com/).
 
 
-An example outcome of using ResponsiveNavCalc can be seen in the 'Navigation Demo' folder.
+An example outcome of using FlexiNavCalc can be seen in the 'Navigation Demo' folder.
 
 Some the styles may not work in older browsers.
