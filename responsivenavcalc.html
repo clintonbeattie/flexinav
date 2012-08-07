@@ -10,17 +10,23 @@
 </head>
 <body>
  
-	<h1>Responsive Nav Calc <span>(<a href="Navigation Demo/index.html">view demo</a>)</span></h1>
-
+	<h1>Flexinav Calculator</h1>
+	<p class="intro">Create flexible, full width navigation</p>
 	<form id="form">
-		<label for="nav_width">Navigation width:</label>
-		<input type="text" name="nav_width" id="nav-width" placeholder="Enter width of navigation" value=""/>
-		<span>px</span>
+		<div class="input">
+			<label for="nav_width">Navigation width:</label>
+			<input type="text" name="nav_width" id="nav-width" placeholder="Enter width of navigation" value=""/><span class="px">px</span>
+		</div>
+
 		<div class="dynamic-functions">
 			<a href="#" id="add">Add</a> | <a href="#" id="remove">Remove</a> | <a href="#" id="reset">Reset</a>
 		</div>
+
 		<div class="inputs">
-			<div class="nav-item"><label for="1">1</label><input type="text" name="dynamic[]" class="field" placeholder="Add element width" value=""/><span>px</span></div>
+			<div class="nav-item">
+				<label for="1">1</label>
+				<input type="text" name="dynamic[]" class="field" placeholder="Enter navigation item width" value=""/><span class="px">px</span>
+			</div>
 		</div>
 		<input name="submit" type="button" value="Calculate"/>
 	</form><!--/form-->

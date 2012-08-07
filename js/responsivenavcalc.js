@@ -10,7 +10,7 @@ $(function() {
 		$('body').append("<div id='alerts'>"+message+"</div>");
 	};
 
-	// Get fields values total when added together
+	// Total all field values and return number
 	function fieldsTotal(){
 		var add = 0;
         $(".field").each(function() {
@@ -26,6 +26,9 @@ $(function() {
 		var add = fieldsTotal();
 		var nav_width = $('#nav-width').val();
 
+		// Update the nav items number
+		$('#inputs-num').html(i);
+
         if(add > nav_width) 
         {
         	showAlert('This is greater than your navigation width. Try again, you may be a few pixels over the total width.');
@@ -34,10 +37,11 @@ $(function() {
         else 
         {
         	$('#alerts').remove();
-        	$('<div class="nav-item"><label for="' + i + '">' + i + '</label><input type="text" class="field" name="dynamic[]" placeholder="Add element width" value="" /><span>px</span></div>').fadeIn('slow').appendTo('.inputs');
+        	$('<div class="nav-item"><label for="' + i + '">' + i + '</label><input type="text" class="field" name="dynamic[]" placeholder="Enter navigation item width" value="" /><span class="px">px</span></div>').fadeIn('slow').appendTo('.inputs');
 			i++;
 			$('.nav-item:last .field').focus();
         }	
+        return false;
 	});
 	
 
@@ -67,8 +71,9 @@ $(function() {
 	$('input[type=button]').click(function(){
 		// Create and empty array to store field values
 		var answers = [];
+		// Get navigation width value
 		var nav_width = $('#nav-width').val();
-		
+
 	    $.each($('.field'), function() {
 	    	a = nav_width;
 	        b = $(this).val();
@@ -90,11 +95,14 @@ $(function() {
 	    	$('#alerts').remove();
 	    	$('#answers').remove();
 	    	// If first value in array equals 0
-	    	if(answers == 0) {
+	    	if(answers == 0 || nav_width == '') {
 	        	showAlert('Please enter a value to be calculated.');
-	        };
-	    	// Show answers
-	    	$('body').append("<div id='answers'>"+answers+"</div>");
+	        }
+	        else 
+	        {
+		    	// Show answers
+		    	$('body').append("<div id='answers'>"+answers+"</div>");
+	    	};
 	    };
 		
 		
