@@ -3,10 +3,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <title>Responsive Nav Calc</title>
 <link href="css/all.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
-<script type="text/javascript" src="js/responsivenavcalc.js"></script>
+<script type="text/javascript" src="js/flexinavcalc.js"></script>
 </head>
 <body>
  
@@ -15,7 +16,7 @@
 	<form id="form">
 		<div class="input">
 			<label for="nav_width">Navigation width:</label>
-			<input type="text" name="nav_width" id="nav-width" placeholder="Enter width of navigation" value=""/><span class="px">px</span>
+			<input type="text" name="nav_width" id="nav-width" placeholder="Navigation width" value=""/><span class="px">px</span>
 		</div>
 
 		<div class="dynamic-functions">
@@ -25,7 +26,7 @@
 		<div class="inputs">
 			<div class="nav-item">
 				<label for="1">1</label>
-				<input type="text" name="dynamic[]" class="field" placeholder="Enter navigation item width" value=""/><span class="px">px</span>
+				<input type="text" name="dynamic[]" class="field" placeholder="Navigation item width" value=""/><span class="px">px</span>
 			</div>
 		</div>
 		<input name="submit" type="button" value="Calculate"/>

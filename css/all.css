@@ -74,12 +74,12 @@ a:active {
 h1 {
 	color: #fff;
 	font-size: 1.6em;
-	margin-bottom: 1.4em;
+	margin-bottom: 1.3em;
 	padding: 0.6em 0;
 	background-color :#444;
 }
 .intro {
-	font-size: 1.2em;
+	font-size: 1em;
 	margin-bottom: 1.8em;
 }
 .px {
@@ -89,7 +89,7 @@ form {
 	text-align: left;
 	width: 90%;
 	margin: 0 auto;
-	padding: 2em;
+	padding: 1.3em;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-ms-box-sizing: border-box;
@@ -115,7 +115,7 @@ input[type=text] {
 	-webkit-font-smoothing: antialiased;
 	padding: 12px;
 	color: #666;
-	width: 82%;
+	width: 77%;
 	transition: all .3s linear;
    -o-transition: all .3s linear;
    -moz-transition: all .3s linear;
@@ -161,11 +161,23 @@ input[type=button] {
 	background-color: #cde6aa;
 }
 @media only screen and (min-width: 700px) {
+	.intro {
+		font-size: 1.2em;
+	}
+	form {
+		padding: 2em;
+	}
 	input[type=text] {
 		width: 90%;
 	}
 }
 @media only screen and (min-width: 1000px) {
+	.intro {
+		font-size: 1.2em;
+	}
+	form {
+		padding: 2em;
+	}
 	input[type=text] {
 		width: 94%;
 	}
