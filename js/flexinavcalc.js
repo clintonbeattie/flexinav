@@ -37,7 +37,7 @@ $(function() {
         else 
         {
         	$('#alerts').remove();
-        	$('<div class="nav-item"><label for="' + i + '">' + i + '</label><input type="text" class="field" name="dynamic[]" placeholder="Navigation item width" value="" /><span class="px">px</span></div>').fadeIn('slow').appendTo('.inputs');
+        	$('<div class="nav-item"><label for="' + i + '">' + i + '</label><input type="text" class="field" name="dynamic[]" placeholder="Navigation item width" value="" pattern="[0-9]*"><span class="px">px</span></div>').fadeIn('slow').appendTo('.inputs');
 			i++;
 			$('.nav-item:last .field').focus();
         }	
@@ -53,6 +53,7 @@ $(function() {
 		};
 		$('#alerts').remove();
 	    $('#answers').remove();
+	    return false;
 	});
 	
 
@@ -64,6 +65,7 @@ $(function() {
 		};
 		$('#alerts').remove();
 	    $('#answers').remove();
+	    return false;
 	});
 	
 

@@ -102,6 +102,9 @@ label {
 	display: block;
 	margin: 0 10px 10px 0;
 }
+.label {
+	margin: 20px 0 10px 0;
+}
 .dynamic-functions {
 	margin: 30px 0 10px 0
 }
