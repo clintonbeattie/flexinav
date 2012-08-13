@@ -3,11 +3,10 @@ $(function() {
 	// Get number of inputs in div
 	var i = $('.inputs input').size() + 1;
 
-
 	// Show alert message
 	function showAlert(message){
 		$('#alerts').remove();
-		$('body').append("<div id='alerts'>"+message+"</div>");
+		$('#answers-wrapper').append("<div id='alerts'>"+message+"</div>");
 	};
 
 	// Total all field values and return number
@@ -19,15 +18,32 @@ $(function() {
         return add;
 	};
 	
+	// Display number of pixels left from nav width
+	$('.inputs').on('keyup','input',function() {
+		var nav_width = $('#nav-width').val();
+		var sumOfVals = 0;
+		$('.inputs input').each(function () {
+            sumOfVals = sumOfVals + parseInt($(this).val());
+        });
+        if(sumOfVals > nav_width) {
+        	alert("You are over your pixel width limit");
+        	$('.nav-item:last .field').val("");
+        }
+        else {
+        	sumOfVals = nav_width - sumOfVals;
+        	$('#px-left em').html(sumOfVals);
+        }
+	});
+
 
 	$('#add').click(function() {
 		// Calculate if total of all nav items is greater than nav width
 		// Add function to show total width of nav so people can see how many pixels left
 		var add = fieldsTotal();
 		var nav_width = $('#nav-width').val();
+		var sumOfVals = 0;
 
-		// Update the nav items number
-		$('#inputs-num').html(i);
+	
 
         if(add > nav_width) 
         {
@@ -39,8 +55,9 @@ $(function() {
         	$('#alerts').remove();
         	$('<div class="nav-item"><label for="' + i + '">' + i + '</label><input type="text" class="field" name="dynamic[]" placeholder="Navigation item width" value="" pattern="[0-9]*"><span class="px">px</span></div>').fadeIn('slow').appendTo('.inputs');
 			i++;
-			$('.nav-item:last .field').focus();
+			
         }	
+        $('.nav-item:last .field').focus();
         return false;
 	});
 	
@@ -103,7 +120,7 @@ $(function() {
 	        else 
 	        {
 		    	// Show answers
-		    	$('body').append("<div id='answers'>"+answers+"</div>");
+		    	$('#answers-wrapper').append("<div id='answers'>"+answers+"</div>");
 	    	};
 	    };
 		

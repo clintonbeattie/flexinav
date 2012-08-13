@@ -53,6 +53,7 @@ body {
 	height: 100%;
 	text-align: center;
 	color: #555;
+	padding-bottom: 30px;
 	background-color: #f1f1f1;
 }
 ul {
@@ -107,6 +108,9 @@ label {
 }
 .dynamic-functions {
 	margin: 30px 0 10px 0
+}
+#px-left {
+	font-size: 0.8em;
 }
 input[type=text] {
 	border: 1px solid #D9D9D9;
