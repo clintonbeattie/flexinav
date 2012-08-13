@@ -8,7 +8,7 @@ The aim of creating FlexiNavCalc is to avoid certain responsive navigation issue
 
 After sifting through all of the sites on [www.mediaquerie.es](http://www.mediaquerie.es/) I could not find one with true full width navigation.
 
-Some of the problems this little app hopes to resolve in full with designs are:
+Some of the problems this little app hopes to resolve in full width designs are:
 
 * **1**: Sometimes you don't want to alter font size when reducing screen widths. This allows you to better judge breakpoints in your design.
 * **2**: Some designers limit themselves to equal width navigation buttons simply because it is easier eg. If you have 4 buttons and you want them to share equal width you simply divide by four which gives you 25%. For the most part, text within these buttons will have a lot of white space each side of the text due to varying navigation title lengths.
