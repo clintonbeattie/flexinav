@@ -109,7 +109,8 @@ label {
 .dynamic-functions {
 	margin: 30px 0 10px 0
 }
-#px-left {
+#px-left,
+#total-perc-width {
 	font-size: 0.8em;
 }
 input[type=text] {

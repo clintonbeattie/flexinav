@@ -23,7 +23,10 @@ $(function() {
 		var nav_width = $('#nav-width').val();
 		var sumOfVals = 0;
 		$('.inputs input').each(function () {
-            sumOfVals = sumOfVals + parseInt($(this).val());
+			// Only add fields where a value has been added
+			if(this.value != ''){
+				sumOfVals = sumOfVals + parseInt($(this).val());
+			};
         });
         if(sumOfVals > nav_width) {
         	alert("You are over your pixel width limit");
@@ -33,6 +36,11 @@ $(function() {
         	sumOfVals = nav_width - sumOfVals;
         	$('#px-left em').html(sumOfVals);
         }
+	});
+	// Display number of pixels left when entering nav width
+	$('.input').on('keyup','input',function() {
+		var nav_width = parseInt($(this).val());
+		$('#px-left em').html(nav_width);
 	});
 
 
@@ -92,14 +100,20 @@ $(function() {
 		var answers = [];
 		// Get navigation width value
 		var nav_width = $('#nav-width').val();
+		// Set for adding percentages together
+		var sum = 0;
 
 	    $.each($('.field'), function() {
 	    	a = nav_width;
 	        b = $(this).val();
 	        c = b/a;
-	        d = parseFloat(c*100).toFixed(2);
+	        d = parseFloat(c*100);
+	        sum += parseFloat(d);
 	        answers.push(d); 
 	    });
+
+	    // Ouput total percentage width used
+	    $('#total-perc-width em').html(sum);
 
 	    // Calculate if total of all nav items is greater than nav width
 	    var add = fieldsTotal();
