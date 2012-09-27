@@ -134,7 +134,7 @@ $(function() {
 	        else 
 	        {
 		    	// Show answers
-		    	$('#answers-wrapper').append("<div id='answers'>"+answers+"</div>");
+		    	$('#answers-wrapper').append("<div id='answers'>"+answers.join("<br>")+"</div>");
 	    	};
 	    };
 		
