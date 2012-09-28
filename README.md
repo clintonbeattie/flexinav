@@ -1,19 +1,25 @@
-# FlexiNavCalc
+# FlexiNav
 
-FlexiNavCalc is a calculator for use in determining percentage widths of navigation items in responsive layouts.
+## Overview
+FlexiNav is a full width navigation calculator for use in determining percentage widths of navigation items in responsive layouts. It is built with HTML, CSS & Javascript.
 
-Its a handy little app that can be used on any device but I find it quite handy to have bookmarked on my iphone.
+## Why FlexiNav was created
+In day to day website builds our team of developers were coming across more sites with full width navigation which needed to be built responsively. Due to the nature of the designs there was a delicate balance between pixel perfection and the somewhat opposing inherent nature of responsiveness. To save time doing maths during the builds FlexiNav was created.
 
-The aim of creating FlexiNavCalc is to avoid certain responsive navigation issues and to give the developer more control over navigation layout, especially full width navigation elements.
+## Usage
+Open your website design file in whatever design software you use eg Photoshop, Fireworks, GIMP etc. If you have designed multiple layouts for a responsive design, use the large desktop view as this will allow you to calculate widths easier. For this example we will assume that the navigation is the same width as the website so lets assume the website max-width is 1140px. Add that into the 'Navigation width' field in FlexiNav.
 
-After sifting through all of the sites on [www.mediaquerie.es](http://www.mediaquerie.es/) I could not find one with true full width navigation.
+Next we need to get the width, in pixels of all the navigation items. Sometimes each navigation item may have a border, or spacing. You will need to factor that in when getting the widths and figure out how you are going to style the elements in your CSS eg Will you account for padding using border-sizing; Will the borders be added to the element or will you use a background image.
 
-Some of the problems this little app hopes to resolve in full width designs are:
+Add the width of the first navigation item into the second field and continue adding fields and values until you arrive at your total 'Navigation Width', in this case 1140px.
 
-* **1**: Sometimes you don't want to alter font size when reducing screen widths. This allows you to better judge breakpoints in your design.
-* **2**: Some designers limit themselves to equal width navigation buttons simply because it is easier eg. If you have 4 buttons and you want them to share equal width you simply divide by four which gives you 25%. For the most part, text within these buttons will have a lot of white space each side of the text due to varying navigation title lengths.
-* **3**: Navigation sometimes goes onto two lines creating when reducing the window size as can be seen [here](http://www.asburyagile.com/).
+As you add values the calculator will tell you how many pixels you have left to play with and the % total width incase you have made an error in retrieving the widths from your design.
 
-An example outcome of using FlexiNavCalc can be seen in the 'Navigation Demo' folder.
+Click 'Calculate' and you will be shown the % values to add to each navigation item.
 
-Some of the styles may not work in older browsers but I am working on this.
+In the attached example I have added an 'id' to each li tag which is a tried and tested method of highlighting navigation on pages by matching each with a similarly named body tag class. You could alternatively use nth-child().
+
+
+An example outcome of using FlexiNav can be seen in the 'Navigation Demo' folder.
+
+Some of the styles may not work in older browsers. This will be remedied in future updates.
