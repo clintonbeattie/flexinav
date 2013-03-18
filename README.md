@@ -23,3 +23,5 @@ In the attached example I have added an 'id' to each li tag which is a tried and
 An example outcome of using FlexiNav can be seen in the 'Navigation Demo' folder.
 
 Some of the styles may not work in older browsers. This will be remedied in future updates.
+
+A Demo can be found at http://www.clintonbeattie.com
