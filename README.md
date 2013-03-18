@@ -24,4 +24,4 @@ An example outcome of using FlexiNav can be seen in the 'Navigation Demo' folder
 
 Some of the styles may not work in older browsers. This will be remedied in future updates.
 
-A Demo can be found at http://www.clintonbeattie.com
+A Demo can be found at <a href="http://www.clintonbeattie.com">http://www.clintonbeattie.com</a>
